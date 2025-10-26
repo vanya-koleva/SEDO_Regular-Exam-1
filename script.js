@@ -18,17 +18,19 @@ function getRandomQuote() {
     return quotes[randomIndex];
 }
 
+// *** Add comments to displayQuote ***
 function displayQuote() {
+    // Step 1: Get a random quote object from the array
     const quote = getRandomQuote();
+    // Step 2: Set the text content of the quote paragraph
     quoteTextElement.textContent = `"${quote.text}"`; // Add quotes around the text
+    // Step 3: Set the text content of the author paragraph
     quoteAuthorElement.textContent = `- ${quote.author}`;
 }
 
 // --- Event Listeners ---
 // Display a random quote when the button is clicked
 if (newQuoteButton) { // Check if button exists before adding listener
-    // *** Add log confirming button found ***
-    console.log("Button found, adding listener."); // NEW LINE
     newQuoteButton.addEventListener('click', displayQuote);
 } else {
     console.error("Button with ID 'new-quote-btn' not found.");
